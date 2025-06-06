@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Inicio – Rocío Ordinola</title>
+
+  <!-- =====================
+       1) TIPOGRAFÍA DESDE GOOGLE FONTS
+       ===================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Enlaza la hoja de estilos principal -->
+  <link rel="stylesheet" href="./css/index_v3.css">
+</head>
+<body>
+  <!-- =======================
+       BARRA DE NAVEGACIÓN
+       ======================= -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <!-- Logo + Nombre: flex para alinear imagen y texto en fila -->
+      <a href="./index.html" class="navbar__logo">
+        <img
+          src="images/logo_condor.png" 
+          alt="Logo de la marca"
+          class="navbar__logo-img"
+        >
+        <span class="navbar__logo-text">Rocío<br>Ordinola</span>
+      </a>
+
+      <!-- Menú principal: lista horizontal en escritorios, se debería ver el menú hamburguesa en versión celular -->
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="./index.html" class="navbar__link">Inicio</a></li>
+        <li class="navbar__item"><a href="./servicios_v3.html" class="navbar__link">Servicios</a></li>
+        <li class="navbar__item"><a href="./proyectos_v3.html" class="navbar__link">Proyectos</a></li>
+        <li class="navbar__item"><a href="./curriculum_v3.html" class="navbar__link">Currículum</a></li>
+        <li class="navbar__item"><a href="./contacto_v3.html" class="navbar__link">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =======================
+       SECCIÓN INICIO ("ABOUT")
+       ======================= -->
+  <main>
+    <section class="about">
+      <div class="about__container">
+        <!-- Columna de texto: título, párrafo y botón -->
+        <div class="about__text">
+          <span class="about__greeting">¡Bienvenidas a mi página web!</span>
+          <h1 class="about__title">
+            Hola mundo! Soy Rocío Ordinola
+          </h1>
+          <p class="about__subtitle">
+            <span class="about__highlight">Analista de datos</span>
+            <!-- Si quisieras intercambiar textos, podrías usar JavaScript para rotar -->
+          </p>
+          <p class="about__description">
+            Especialista en recopilación, procesamiento y análisis de datos, con
+            una sólida capacidad para elaborar informes detallados y aportar análisis
+            estratégicos clave. Mi enfoque está orientado a la automatización de procesos
+            y la creación de visualizaciones comprensibles para públicos diversos. Me
+            interesa brindar una perspectiva analítica que permita extraer información
+            valiosa para la toma de decisiones.
+          </p>
+          <div class="about__btn-group">
+            <a href="https://www.canva.com/design/DAGpccDMZlY/5BX6EG5p2wg97Q6je60qIQ/view?utm_content=DAGpccDMZlY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hcee10124af" class="btn about__btn">
+              Descargar CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna de imagen: ilustración responsiva -->
+        <div class="about__image">
+          <img
+            src="images/data_analyst.png"
+            alt="Imágen de analista de datos"
+            class="about__img"
+          >
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================
+       PIE DE PÁGINA
+       ======================= -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">
+        &copy; 2025 Rocío Ordinola.
+      </p>
+      <p class="footer__text">
+        Conectemos en
+        <a
+          href="https://www.linkedin.com/in/1rocio-ordinola/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__link"
+        >
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
