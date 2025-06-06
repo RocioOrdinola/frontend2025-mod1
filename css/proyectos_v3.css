@@ -1,0 +1,282 @@
+/*=============================================================================
+  0) BOX MODEL RESET Y TIPOGRAFÍA BASE
+=============================================================================*/
+
+/* 1) Aplicamos box-sizing: border-box a todos los elementos para que padding y border
+      se incluyan dentro de width/height y evitemos cálculos adicionales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Propiedad usada: box-sizing */
+  margin: 0;              /* Eliminamos márgenes por defecto */
+  padding: 0;             /* Eliminamos rellenos por defecto */
+}
+
+/* 2) Estilo base del body con fuente relativa, color y fondo */
+body {
+  font-family: "Maven Pro", sans-serif; /* Propiedad usada: font-family */
+  font-size: 100%;    /* 1rem = 16px (propiedad font-size relativa) */
+  line-height: 1.5;   /* Altura de línea legible */
+  color: #333333;     /* Color de texto por defecto (propiedad color) */
+  background-color: #f7f5f5; /* Fondo claro (propiedad background-color) */
+  padding-top: 4rem;  /* Espacio superior para dejar hueco a la navbar */
+}
+
+/*=============================================================================
+  1) VARIABLES CSS PARA COLORES, ESPACIOS Y RADIOS
+=============================================================================*/
+
+:root {
+  --color-primario: #0055aa;      /* Azul primario */
+  --color-secundario: #fdedec;    /* Rosado de fondo */
+  --color-acento: #ffc200;        /* Amarillo de acento */
+  --color-texto: #333333;         /* Texto oscuro */
+  --color-footer-texto: #777777;  /* Gris claro para el footer */
+  --radio-borde: 0.25rem;         /* 4px para bordes redondeados */
+
+  --espacio-xxs: 0.25rem; /* 4px */
+  --espacio-xs: 0.5rem;   /* 8px */
+  --espacio-s: 1rem;      /* 16px */
+  --espacio-m: 1.5rem;    /* 24px */
+  --espacio-l: 2rem;      /* 32px */
+  --espacio-xl: 3rem;     /* 48px */
+}
+
+/*=============================================================================
+  2) NAVBAR: FLEXBOX, PSEUDOCLASES Y MEDIDAS RELATIVAS
+=============================================================================*/
+
+.navbar {
+  position: fixed;           /* La barra se fija arriba al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;               /* Ancho completo de la ventana */
+  background-color: var(--color-secundario); /* Rosa suave (background-color) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    /* Sombra para separar del contenido */
+  z-index: 1000;             /* Se sobrepone al resto */
+}
+
+.navbar__container {
+  max-width: 1200px;          /* Ancho máximo del contenedor */
+  margin: 0 auto;             /* Centrado horizontal (margin:auto) */
+  display: flex;              /* Iniciamos flexbox en la navbar */
+  align-items: center;        /* Centra verticalmente los hijos (align-items) */
+  justify-content: space-between; /* Logo a izquierda, menú a derecha (justify-content) */
+  padding: var(--espacio-xs) var(--espacio-s); /* 8px arriba/abajo, 16px izquierda/derecha */
+}
+
+/* ----- Logo ----- */
+.navbar__logo {
+  display: flex;               /* Flexbox para img y texto en fila */
+  align-items: center;         /* Centra verticalmente imagen y texto */
+  text-decoration: none;       /* Eliminamos subrayado de enlace (text-decoration) */
+  color: var(--color-texto);   /* #333333 */
+  font-size: 1.5rem;           /* 24px (propiedad font-size relativa) */
+  font-weight: 700;            /* Negrita (propiedad font-weight) */
+}
+
+.navbar__logo-img {
+  width: 5rem;                 /* 80px (5 × 16px) como ancho máximo (propiedad width) */
+  height: auto;                /* Mantiene la proporción de la imagen (height:auto) */
+  margin-right: var(--espacio-xs); /* 8px de espacio entre img y texto (propiedad margin) */
+}
+
+.navbar__logo-text {
+  line-height: 1.2;            /* Espaciado entre líneas (propiedad line-height) */
+  text-align: left;            /* Alineación de texto a la izquierda (propiedad text-align) */
+}
+
+/* ----- Menú ----- */
+.navbar__menu {
+  list-style: none;            /* Quita viñetas (propiedad list-style) */
+  display: flex;               /* Flex para alinear los ítems en fila (display:flex) */
+  gap: var(--espacio-l);       /* 32px entre cada <li> (propiedad gap) */
+}
+
+.navbar__item { /* Contenedor de cada enlace */ }
+
+.navbar__link {
+  text-decoration: none;           /* Quita subrayado del enlace (text-decoration) */
+  color: var(--color-texto);       /* Color de texto del enlace (propiedad color) */
+  font-size: 1rem;                 /* 16px aprox. (propiedad font-size) */
+  padding: var(--espacio-xxs) var(--espacio-s); /* 4px arriba/abajo, 16px izq/der */
+  border-radius: var(--radio-borde);            /* 4px de radio (propiedad border-radius) */
+  transition: background-color 0.2s, color 0.2s; /* Transición suave (propiedad transition) */
+}
+
+/* Pseudoclase :hover para mostrar feedback al pasar cursor (propiedad :hover) */
+.navbar__link:hover {
+  background-color: var(--color-primario); /* #0055aa */
+  color: #ffffff;                          /* Texto blanco al hacer hover */
+}
+
+/* Pseudoclase :focus para accesibilidad de teclado (propiedad :focus) */
+.navbar__link:focus {
+  outline: 2px dashed var(--color-primario);
+  outline-offset: 2px;
+}
+
+/* Ocultamos menú en móviles (se puede sustituir luego con menú hamburguesa) */
+@media (max-width: 767px) {
+  .navbar__menu {
+    display: none;  /* Oculta la lista en pantallas pequeñas */
+  }
+}
+
+/*=============================================================================
+  3) SECCIÓN DE PROYECTOS: GRID, BOX-MODEL, PSEUDOCLASES Y UNIDADES RELATIVAS
+=============================================================================*/
+
+/* Contenedor principal de proyectos “projects” */
+.projects {
+  max-width: 1200px;        /* Ancho máximo centralizado */
+  margin: 0 auto;           /* Centrado horizontal */
+  padding: var(--espacio-l) var(--espacio-s); /* Espacio interior: 32px arriba/abajo, 16px izq/der */
+}
+
+/* Introducción antes de la cuadrícula */
+.projects__intro {
+  text-align: center;       /* Centra el título */
+  margin-bottom: var(--espacio-l); /* 32px antes de la cuadrícula */
+}
+
+.projects__title {
+  font-size: 2rem;          /* 32px (propiedad font-size) */
+  color: var(--color-primario); /* Tono azul */
+  margin-bottom: var(--espacio-s); /* 16px debajo */
+}
+
+/* =======================
+   GRID DE PROYECTOS
+   ======================= */
+.projects__grid {
+  display: grid;            /* Inicia CSS Grid (propiedad display: grid) */
+  grid-template-columns: 1fr;   /* Por defecto 1 columna (mobile-first) */
+  grid-gap: var(--espacio-l);   /* 32px de espacio entre filas/columnas (propiedad grid-gap) */
+}
+
+/* En pantallas ≥ 768px (tablet o superior), pasamos a 2 columnas */
+@media (min-width: 768px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales (propiedad repeat) */
+  }
+}
+
+/* En pantallas ≥ 1024px (escritorio grande), usamos 3 columnas */
+@media (min-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  }
+}
+
+/* =======================
+   CADA TARJETA DE PROYECTO
+   ======================= */
+.project-card {
+  background-color: #ffffff;      /* Fondo blanco para cada tarjeta */
+  border: 1px solid #e0e0e0;      /* Borde gris claro (propiedad border) */
+  border-radius: var(--radio-borde); /* Borde ligeramente redondeado */
+  overflow: hidden;               /* Oculta cualquier contenido que desborde */
+  display: flex;                  /* Flexbox para colocar texto e imagen en columna */
+  flex-direction: column;         /* Columna: primero texto, luego imagen */
+  transition: transform 0.2s, box-shadow 0.2s; /* Transición al hacer hover */
+}
+
+/* Pseudoclase :hover para “elevación” de la tarjeta */
+.project-card:hover {
+  transform: translateY(-4px);    /* Eleva 4px al pasar cursor (propiedad transform) */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Información textual dentro de la tarjeta */
+.project-card__info {
+  padding: var(--espacio-m);      /* 24px de relleno dentro de la tarjeta (propiedad padding) */
+  flex: 1;                        /* Hace que esta sección crezca para empujar la imagen abajo */
+  display: flex;
+  align-items: center;            /* Centra verticalmente el texto */
+}
+
+/* Texto descriptivo del proyecto */
+.project-card__text {
+  font-size: 1rem;                /* 16px (propiedad font-size) */
+  color: var(--color-texto);      /* Color #333333 (propiedad color) */
+  line-height: 1.4;               /* Altura de línea más compacta */
+}
+
+/* Contenedor de la imagen: para controlar proporción y responsividad */
+.project-card__img-container {
+  width: 100%;                    /* Ancho completo del contenedor padre */
+  overflow: hidden;               /* Oculta bordes por si la img crece */
+}
+
+/* Imagen responsiva */
+.project-card__img {
+  width: 100%;                    /* 100% del ancho del contenedor (propiedad width) */
+  height: auto;                   /* Mantiene proporción (propiedad height) */
+  display: block;                 /* Elimina espacio inferior si fuese inline */
+}
+
+/*=============================================================================
+  4) FOOTER: BOX-MODEL, PSEUDOCLASES Y UNIDADES RELATIVAS
+=============================================================================*/
+.footer {
+  background-color: #ffffff;      /* Fondo blanco */
+  border-top: 1px solid #e0e0e0;  /* Línea delimitadora en la parte superior (propiedad border-top) */
+  padding: var(--espacio-m) var(--espacio-s); /* 24px arriba/abajo, 16px izq/der */
+}
+
+.footer__container {
+  max-width: 1200px;              /* Ancho máximo centralizado */
+  margin: 0 auto;                 /* Centrado horizontal */
+  text-align: center;             /* Texto centrado */
+}
+
+.footer__text {
+  font-size: 0.875rem;            /* 14px (propiedad font-size) */
+  color: var(--color-footer-texto); /* Gris claro */
+  margin: var(--espacio-xs) 0;    /* 8px arriba/abajo (propiedad margin) */
+}
+
+/* Enlace en footer con pseudoclase :hover */
+.footer__link {
+  color: var(--color-primario);   /* Azul como color base */
+  text-decoration: none;          /* Quita subrayado (propiedad text-decoration) */
+  transition: text-decoration 0.2s; /* Transición en subrayado */
+}
+
+.footer__link:hover {
+  text-decoration: underline;     /* Subraya al pasar cursor (propiedad :hover) */
+}
+
+/*=============================================================================
+  5) MEDIA QUERIES (BREAKPOINTS)
+=============================================================================*/
+
+/* Móviles muy pequeños (< 480px) */
+@media (max-width: 479px) {
+  .navbar__logo {
+    font-size: 1.25rem;           /* 20px en móviles muy pequeños */
+  }
+
+  .navbar__logo-img {
+    width: 4rem;                  /* 64px en móviles muy pequeños */
+  }
+
+  .projects {
+    padding: var(--espacio-m) var(--espacio-s); /* 24px / 16px */
+  }
+
+  .project-card__info {
+    padding: var(--espacio-s);    /* 16px para tarjetas en móviles */
+  }
+}
+
+/* Escritorio mediano (>= 1024px) */
+/* Ya cubierto en grid-template; aquí solo ajustes menores si fuera necesario */
+
+/* Escritorio grande (>= 1440px) */
+@media (min-width: 1440px) {
+  .projects {
+    padding: var(--espacio-xl) var(--espacio-s); /* 48px arriba/abajo */
+  }
+}
