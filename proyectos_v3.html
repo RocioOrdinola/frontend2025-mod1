@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Proyectos – Rocío Ordinola</title>
+
+  <!-- =====================
+       1) TIPOGRAFÍA
+       ===================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Enlaza la hoja de estilos principal -->
+  <link rel="stylesheet" href="css/proyectos_v3.css">
+</head>
+<body>
+  <!-- =======================
+       BARRA DE NAVEGACIÓN
+       ======================= -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <!-- Logo + Nombre: uso de flexbox para alinear imagen y texto en fila -->
+      <a href="index_v3.html" class="navbar__logo">
+        <img
+          src="images/logo_condor.png"
+          alt="Logo de la marca"
+          class="navbar__logo-img"
+        >
+        <span class="navbar__logo-text">Rocío<br>Ordinola</span>
+      </a>
+
+      <!-- Menú principal: lista horizontal en escritorio, oculta en móvil (se podría sustituir por un menú hamburguesa) -->
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="./index_v3.html" class="navbar__link">Inicio</a></li>
+        <li class="navbar__item"><a href="./servicios_v3.html" class="navbar__link">Servicios</a></li>
+        <li class="navbar__item"><a href="./proyectos_v3.html" class="navbar__link">Proyectos</a></li>
+        <li class="navbar__item"><a href="./curriculum_v3.html" class="navbar__link">Currículum</a></li>
+        <li class="navbar__item"><a href="./contacto_v3.html" class="navbar__link">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =======================
+       SECCIÓN DE PROYECTOS
+       ======================= -->
+  <main class="projects">
+    <section class="projects__intro">
+      <h2 class="projects__title">Proyectos en los que trabajé</h2>
+    </section>
+
+    <!-- Grid de proyectos: uso de CSS Grid para controlar filas/columnas -->
+    <section class="projects__grid">
+      <!-- Cada .project-card representa un proyecto -->
+      <article class="project-card">
+        <div class="project-card__info">
+          <p class="project-card__text">
+            Bol 190. Distribución espacial de estratos socioeconómicos en la ciudad de Neuquén 1991, 2001 y 2010
+          </p>
+        </div>
+        <div class="project-card__img-container">
+          <img
+            src="images/estratos_socio_econom.png"
+            alt="Proyecto 1: estratos socioeconómicos"
+            class="project-card__img"
+          >
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__info">
+          <p class="project-card__text">
+            Bol 193. Hidrocarburos: Evolución espacial y temporal de la producción.
+            Pozos vs. producción de petróleo y gas, 2008–2018.
+          </p>
+        </div>
+        <div class="project-card__img-container">
+          <img
+            src="images/evoluc_producc_gas_petroleo.png"
+            alt="Proyecto 2: hidrocarburos evolución"
+            class="project-card__img"
+          >
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__info">
+          <p class="project-card__text">
+            Bol 207. Centrales eléctricas asociadas a la producción de hidrocarburos.
+          </p>
+        </div>
+        <div class="project-card__img-container">
+          <img
+            src="images/ee_hidrocarburos.png"
+            alt="Proyecto 3: centrales eléctricas"
+            class="project-card__img"
+          >
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__info">
+          <p class="project-card__text">
+            Tablero de análisis de operaciones en Looker Studio.
+          </p>
+        </div>
+        <div class="project-card__img-container">
+          <img
+            src="images/analisis_operaciones_latam_looker.png"
+            alt="Proyecto 4: análisis operaciones Looker"
+            class="project-card__img"
+          >
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__info">
+          <p class="project-card__text">
+            Tablero de análisis de ventas en Power BI.
+          </p>
+        </div>
+        <div class="project-card__img-container">
+          <img
+            src="images/analisis_ventas_power_bi.png"
+            alt="Proyecto 5: análisis ventas Power BI"
+            class="project-card__img"
+          >
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- =======================
+       PIE DE PÁGINA
+       ======================= -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">
+        &copy; 2025 Rocío Ordinola.
+      </p>
+      <p class="footer__text">
+        Conectemos en
+        <a
+          href="https://www.linkedin.com/in/1rocio-ordinola/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__link"
+        >
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

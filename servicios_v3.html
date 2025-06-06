@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios – Rocío Ordinola</title>
+
+  <!-- =======================
+       1) TIPOGRAFÍA
+       ======================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+ <!-- Enlaza la hoja de estilos principal -->
+  <link rel="stylesheet" href="./css/servicios_v3.css">
+</head>
+<body>
+  <!-- =======================
+       BARRA DE NAVEGACIÓN
+       ======================= -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <!-- Logo + Nombre: flex para sitúa la imagen y el texto en fila -->
+      <a href="index_v3.html" class="navbar__logo">
+        <img
+          src="images/logo_condor.png"
+          alt="Logo de la marca"
+          class="navbar__logo-img"
+        >
+        <span class="navbar__logo-text">Rocío<br>Ordinola</span>
+      </a>
+
+      <!-- Menú principal: lista horizontal en escritorio, oculta en móvil -->
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="./index_v3.html" class="navbar__link">Inicio</a></li>
+        <li class="navbar__item"><a href="./servicios_v3.html" class="navbar__link">Servicios</a></li>
+        <li class="navbar__item"><a href="./proyectos_v3.html" class="navbar__link">Proyectos</a></li>
+        <li class="navbar__item"><a href="./curriculum_v3.html" class="navbar__link">Currículum</a></li>
+        <li class="navbar__item"><a href="./contacto_v3.html" class="navbar__link">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =======================
+       SECCIÓN SERVICIOS
+       ======================= -->
+  <main class="services">
+    <!-- Introducción: título y subtítulo -->
+    <section class="services__intro">
+      <h1 class="services__title">
+        Transformá tu negocio con soluciones basadas en datos
+      </h1>
+      <p class="services__subtitle">
+        Ofrezco servicios personalizados en análisis, visualización y automatización.
+        Descubrí cómo puedo ayudarte a tomar decisiones más inteligentes y eficientes.
+      </p>
+    </section>
+
+    <!-- Grid de tarjetas de servicio -->
+    <section class="services__grid">
+      <!-- Tarjeta 1 -->
+      <article class="service-card">
+        <div class="service-card__img-container">
+          <img
+            src="images/data_analysis_2.png"
+            alt="Ilustración de Análisis de datos estratégico"
+            class="service-card__img"
+          >
+        </div>
+        <div class="service-card__content">
+          <h2 class="service-card__title">Análisis de datos estratégico</h2>
+          <p class="service-card__description">
+            Transformo tus datos en información clara para la toma de decisiones.
+            Con informes y dashboards interactivos, entendé lo que pasó, pasa y pasará.
+          </p>
+          <a href="contacto_v3.html" class="btn service-card__btn">
+            Consultar este servicio
+          </a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 2 -->
+      <article class="service-card">
+        <div class="service-card__img-container">
+          <img
+            src="images/data_analysis.png"
+            alt="Ilustración de Visualización de datos"
+            class="service-card__img"
+          >
+        </div>
+        <div class="service-card__content">
+          <h2 class="service-card__title">Visualización de datos & storytelling</h2>
+          <p class="service-card__description">
+            Diseño reportes visuales, dashboards y mapas temáticos en Power BI,
+            Looker Studio o QGIS, facilitando la interpretación de tus datos.
+          </p>
+          <a href="contacto_v3.html" class="btn service-card__btn">
+            Consultar este servicio
+          </a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 3 -->
+      <article class="service-card">
+        <div class="service-card__img-container">
+          <img
+            src="images/programming.png"
+            alt="Ilustración de Automatización de procesos con Python"
+            class="service-card__img"
+          >
+        </div>
+        <div class="service-card__content">
+          <h2 class="service-card__title">Automatización con Python y SQL</h2>
+          <p class="service-card__description">
+            Optimizo flujos de trabajo automatizando tareas repetitivas y reportes
+            con scripts personalizados. Ahorrá tiempo, minimizá errores y aumentá la eficiencia.
+          </p>
+          <a href="contacto_v3.html" class="btn service-card__btn">
+            Consultar este servicio
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- =======================
+       PIE DE PÁGINA
+       ======================= -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">
+        &copy; 2025 Rocío Ordinola. 
+      </p>
+      <p class="footer__text">
+        Conectemos en
+        <a
+          href="https://www.linkedin.com/in/1rocio-ordinola/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__link"
+        >
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

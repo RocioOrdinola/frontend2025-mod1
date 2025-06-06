@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto – Rocío Ordinola</title>
+
+  <!-- =======================
+       1) TIPOGRAFÍA
+       ======================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Enlaza la hoja de estilos principal -->
+  <link rel="stylesheet" href="css/contacto_v3.css">
+</head>
+<body>
+  <!-- =======================
+       BARRA DE NAVEGACIÓN
+       ======================= -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <!-- Logo + Texto: Flexbox para alinear imagen y texto -->
+      <a href="index_v3.html" class="navbar__logo">
+        <img
+          src="images/logo_condor.png"
+          alt="Logo de la marca"
+          class="navbar__logo-img"
+        >
+        <span class="navbar__logo-text">Rocío<br>Ordinola</span>
+      </a>
+
+      <!-- Menú principal: lista horizontal en escritorio, oculta en móvil -->
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="./index_v3.html" class="navbar__link">Inicio</a></li>
+        <li class="navbar__item"><a href="./servicios_v3.html" class="navbar__link">Servicios</a></li>
+        <li class="navbar__item"><a href="./proyectos_v3.html" class="navbar__link">Proyectos</a></li>
+        <li class="navbar__item"><a href="./curriculum_v3.html" class="navbar__link">Currículum</a></li>
+        <li class="navbar__item"><a href="./contacto_v3.html" class="navbar__link">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =======================
+       SECCIÓN CONTACTO
+       ======================= -->
+  <main class="contact">
+    <div class="contact__container">
+      <!-- ---------- COLUMNA IZQUIERDA: MAPA + DATOS ---------- -->
+      <section class="contact__column contact__column--info">
+        <!-- Mapa incrustado (Google Maps) -->
+        <div class="contact__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12411.153780889672!2d-68.05245772374745!3d-38.951661149105945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1749035752363!5m2!1ses!2sar"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Datos de contacto: cada línea con texto a la izquierda e ícono a la derecha -->
+        <div class="contact__details">
+          <h2 class="contact__heading">¡Hablemos!</h2>
+
+          <!-- Item de Teléfono: contenedor flex para texto + icono -->
+          <div class="contact__detail-item">
+            <p class="contact__phone"><a href="tel:+549295465395">+54 9 2954 65395</a></p>
+            <img
+              src="images/smartphone.png"
+              alt="Icono de smartphone"
+              class="contact__icon"
+            >
+          </div>
+
+          <!-- Item de Email: contenedor flex para texto + icono -->
+          <div class="contact__detail-item">
+            <p class="contact__email">
+              <a href="mailto:rocio.ordinola.a@gmail.com">rocio.ordinola.a@gmail.com</a>
+            </p>
+            <img
+              src="images/email.png"
+              alt="Icono de email"
+              class="contact__icon"
+            >
+          </div>
+
+
+
+      <!-- ---------- COLUMNA DERECHA: FORMULARIO DE CONTACTO Y FEEDBACK ---------- -->
+      <section class="contact__column contact__column--form">
+        <div class="contact__form-wrapper">
+          <!-- Formulario principal de contacto -->
+          <h2 class="contact__form-heading">
+            ¿Estás interesada en que trabajemos juntas? ¡Contáctame!
+          </h2>
+          <form action="#" method="post" class="contact__form">
+            <!-- Campo Nombre -->
+            <div class="contact__field-group">
+              <label for="name" class="contact__label">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="contact__input"
+                placeholder="Tu nombre"
+                required
+              >
+            </div>
+
+            <!-- Campo Email -->
+            <div class="contact__field-group">
+              <label for="email" class="contact__label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="contact__input"
+                placeholder="Tu correo"
+                required
+              >
+            </div>
+
+            <!-- Campo Mensaje -->
+            <div class="contact__field-group">
+              <label for="message" class="contact__label">Mensaje</label>
+              <textarea
+                id="message"
+                name="message"
+                class="contact__textarea"
+                rows="5"
+                placeholder="Tu mensaje"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Botón de envío -->
+            <div class="contact__button-wrapper">
+              <button type="submit" class="btn contact__submit-btn">
+                Enviar
+              </button>
+            </div>
+          </form>
+
+          <!-- ---------- FORMULARIO DE FEEDBACK  ---------- -->
+          <!-- ---Quería incorporar esta sección, le consulté al chat cómo hacerlo ---------- --> 
+          <div class="contact__feedback-section">
+            <h2 class="contact__feedback-heading">
+              ¿Qué te pareció esta página?
+            </h2>
+            <!--
+              Para que los datos se envíen directamente a una Google Sheets,
+              lo más sencillo es crear un Google Form con estos campos:
+                1) Nombre (opcional)
+                2) Puntuación Estética (1–5)
+                3) Puntuación Navegabilidad (1–5)
+                4) Puntuación Información (1–5)
+                5) Comentarios adicionales (opcional)
+
+              Luego, en el Google Form, en “Enviar” → “Incrustar HTML” copias el <iframe>
+              y lo pegas aquí dentro. De esta manera, las respuestas llegarán
+              directamente a tu hoja de cálculo vinculada.
+
+              A modo de ejemplo, en este momento usaremos un <iframe> genérico.
+              Reemplazá el `src` con el código que te da Google Forms.
+            -->
+            <div class="contact__feedback-form-wrapper">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfxmEK15Hr1m1ytPV5s7SYQnKdu_eUUSh8xmsxJRa1bDe8vWQ/viewform?embedded=true" 
+                width="500" 
+                height="3500" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0">
+                Cargando…
+                </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- =======================
+       PIE DE PÁGINA
+       ======================= -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">
+        &copy; 2025 Rocío Ordinola.
+      </p>
+      <p class="footer__text">
+        Conectemos en
+        <a
+          href="https://www.linkedin.com/in/1rocio-ordinola/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__link"
+        >
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

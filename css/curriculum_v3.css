@@ -1,0 +1,308 @@
+/*=============================================================================
+  0) RESET BOX‐MODEL GLOBAL Y TIPOGRAFÍA BASE
+=============================================================================*/
+
+/* box-sizing: border-box para incluir padding/border dentro de width/height */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* propiedad: box-sizing */
+  margin: 0;              /* propiedad: margin */
+  padding: 0;             /* propiedad: padding */
+}
+
+html {
+  font-size: 100%;        /* 1rem = 16px (propiedad: font-size relativa) */
+}
+
+body {
+  font-family: "Maven Pro", sans-serif; /* propiedad: font-family */
+  line-height: 1.5;                     /* propiedad: line-height */
+  color: #333333;                       /* propiedad: color */
+  background-color: #f7f5f5;            /* propiedad: background-color */
+  padding-top: 4rem;                    /* deja espacio para navbar fija (propiedad: padding-top) */
+}
+
+/*=============================================================================
+  1)  VARIABLES Y UNIDADES RELATIVAS
+=============================================================================*/
+:root {
+  --color-primario: #0055aa;        /* Azul principal */
+  --color-secundario: #fdedec;      /* Rosado de fondo navbar */
+  --color-acento: #ffc200;          /* Amarillo para énfasis */
+  --color-texto: #333333;           /* Gris oscuro texto general */
+  --color-footer-texto: #777777;    /* Gris claro para footer */
+  --radio-borde: 0.5rem;            /* 8px de radio para bordes */
+
+  --espacio-xxs: 0.25rem; /* 4px */
+  --espacio-xs: 0.5rem;   /* 8px */
+  --espacio-s: 1rem;      /* 16px */
+  --espacio-m: 1.5rem;    /* 24px */
+  --espacio-l: 2rem;      /* 32px */
+  --espacio-xl: 3rem;     /* 48px */
+}
+
+/*=============================================================================
+  2) NAVBAR: FLEXBOX, PSEUDOCLASES Y UNIDADES RELATIVAS
+=============================================================================*/
+.navbar {
+  position: fixed;                          /* fija al top (propiedad: position) */
+  top: 0;
+  left: 0;
+  width: 100%;                              /* ocupa ancho completo (propiedad: width) */
+  background-color: var(--color-secundario); /* color de fondo (propiedad: background-color) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* sombra sutil (propiedad: box-shadow) */
+  z-index: 1000;                            /* sobrepone al contenido (propiedad: z-index) */
+}
+
+.navbar__container {
+  max-width: 1200px;             /* ancho máximo (propiedad: max-width) */
+  margin: 0 auto;                /* centrado horizontal (propiedad: margin auto) */
+  display: flex;                 /* Flexbox para alinear logo y menú (propiedad: display) */
+  align-items: center;           /* centra verticalmente hijos (propiedad: align-items) */
+  justify-content: space-between;/* separación entre logo y menú (propiedad: justify-content) */
+  padding: var(--espacio-xs) var(--espacio-s); /* espaciado interno 8px/16px (propiedad: padding) */
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;               /* Flex para imagen+texto (propiedad: display) */
+  align-items: center;         /* centra verticalmente (propiedad: align-items) */
+  text-decoration: none;       /* quita subrayado (propiedad: text-decoration) */
+  color: var(--color-texto);   /* color del texto (propiedad: color) */
+  font-size: 1.5rem;           /* 24px (propiedad: font-size relativa) */
+  font-weight: 700;            /* negrita (propiedad: font-weight) */
+}
+
+.navbar__logo-img {
+  width: 5rem;                 /* 80px (propiedad: width relativa) */
+  height: auto;                /* mantiene proporción (propiedad: height auto) */
+  margin-right: var(--espacio-s); /* 16px separación (propiedad: margin) */
+}
+
+.navbar__logo-text {
+  line-height: 1.2;            /* altura de línea (propiedad: line-height) */
+  text-align: left;            /* alineación (propiedad: text-align) */
+}
+
+/* Menú */
+.navbar__menu {
+  list-style: none;            /* quita viñetas (propiedad: list-style) */
+  display: flex;               /* Flex para ítems en fila (propiedad: display) */
+  gap: var(--espacio-l);       /* 32px espacio entre ítems (propiedad: gap) */
+}
+
+.navbar__item {}
+
+.navbar__link {
+  text-decoration: none;           /* quita subrayado (propiedad: text-decoration) */
+  color: var(--color-texto);       /* color de texto (propiedad: color) */
+  font-size: 1rem;                 /* 16px (propiedad: font-size) */
+  padding: var(--espacio-xxs) var(--espacio-s); /* 4px/16px (propiedad: padding) */
+  border-radius: var(--radio-borde);            /* 8px redondeado (propiedad: border-radius) */
+  transition: background-color 0.2s, color 0.2s; /* transición suave (propiedad: transition) */
+}
+
+/* Pseudoclase :hover para feedback al pasar cursor (propiedad: :hover) */
+.navbar__link:hover {
+  background-color: var(--color-primario); /* fondo azul (propiedad: background-color) */
+  color: #ffffff;                          /* texto blanco */
+}
+
+/* Pseudoclase :focus para accesibilidad por teclado (propiedad: :focus) */
+.navbar__link:focus {
+  outline: 2px dashed var(--color-primario); /* contorno visible (propiedad: outline) */
+  outline-offset: 2px;                       /* separación del contorno (propiedad: outline-offset) */
+}
+
+/* Ocultar menú en pantallas pequeñas (<768px) */
+@media (max-width: 767px) {
+  .navbar__menu {
+    display: none;            /* oculta el menú (propiedad: display) */
+  }
+}
+
+/*=============================================================================
+  3) SECCIÓN CURRÍCULUM: GRID, BOX‐MODEL Y PSEUDOCLASES
+=============================================================================*/
+.resume {
+  max-width: 1200px;           /* ancho máximo de contenido (propiedad: max-width) */
+  margin: 0 auto;              /* centrado horizontal (propiedad: margin auto) */
+  padding: var(--espacio-l) var(--espacio-s); /* 32px arriba/abajo, 16px izq/der (propiedad: padding) */
+}
+
+.resume__container {
+  display: grid;                     /* CSS Grid para dos columnas (propiedad: display) */
+  grid-template-columns: 1fr;        /* por defecto 1 columna (móvil-first) */
+  grid-gap: var(--espacio-l);        /* 32px espacio entre columnas/filas (propiedad: gap) */
+}
+
+/* En pantallas ≥768px: dos columnas (Experiencia y Educación) */
+@media (min-width: 768px) {
+  .resume__container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales (propiedad: repeat) */
+  }
+}
+
+/* Cada “columna” */
+.resume__column {
+  background-color: #ffffff;          /* fondo blanco (propiedad: background-color) */
+  border: 1px solid #e0e0e0;          /* borde gris claro (propiedad: border) */
+  border-radius: var(--radio-borde);  /* esquinas redondeadas (propiedad: border-radius) */
+  padding: var(--espacio-m);          /* 24px de relleno (propiedad: padding) */
+  display: flex;                      /* flexbox para apilar en columna (propiedad: display) */
+  flex-direction: column;             /* organiza contenido en columna (propiedad: flex-direction) */
+}
+
+/* Encabezado de cada columna */
+.resume__heading {
+  font-size: 1.75rem;                 /* 28px (propiedad: font-size) */
+  color: var(--color-primario);       /* azul para destacar (propiedad: color) */
+  margin-bottom: var(--espacio-s);    /* 16px debajo (propiedad: margin-bottom) */
+  text-align: center;                 /* centrado horizontal (propiedad: text-align) */
+}
+
+/* =======================
+   TIMELINE (items de experiencia/educación)
+   ======================= */
+.timeline {
+  display: flex;                      /* Flexbox para apilar items (propiedad: display) */
+  flex-direction: column;             /* columna: un item debajo de otro (propiedad: flex-direction) */
+  gap: var(--espacio-m);              /* 24px entre cada item (propiedad: gap) */
+}
+
+/* Cada elemento de la línea de tiempo */
+.timeline__item {
+  display: flex;                      /* Flexbox para colocar año + contenido (propiedad: display) */
+  flex-wrap: wrap;                    /* En móvil, el texto puede bajar (propiedad: flex-wrap) */
+}
+
+/* Año en la línea de tiempo */
+.timeline__yr {
+  flex: 0 0 30%;                      /* ocupa 30% del ancho (propiedad: flex) */
+  font-size: 1rem;                    /* 16px (propiedad: font-size) */
+  color: var(--color-primario);       /* azul (propiedad: color) */
+  font-weight: 700;                   /* negrita (propiedad: font-weight) */
+  padding-right: var(--espacio-s);    /* 16px a la derecha (propiedad: padding-right) */
+  text-align: right;                  /* texto alineado a la derecha (propiedad: text-align) */
+}
+
+/* Contenido de la línea de tiempo (rol, institución, tareas) */
+.timeline__info {
+  flex: 1;                            /* ocupa el resto del ancho (propiedad: flex) */
+}
+
+.timeline__role {
+  font-size: 1.125rem;                /* 18px (propiedad: font-size) */
+  margin-bottom: var(--espacio-xs);   /* 8px debajo (propiedad: margin-bottom) */
+  color: var(--color-texto);          /* gris oscuro (propiedad: color) */
+}
+
+.timeline__org {
+  display: block;                     /* forzar salto de línea (propiedad: display) */
+  font-size: 0.875rem;                /* 14px (propiedad: font-size) */
+  color: #555555;                     /* gris medio (propiedad: color) */
+  margin-bottom: var(--espacio-s);    /* 16px debajo (propiedad: margin-bottom) */
+}
+
+/* Lista de tareas/actividades */
+.timeline__tasks {
+  list-style: disc;                   /* viñetas de disco (propiedad: list-style) */
+  padding-left: var(--espacio-l);     /* 32px de sangría (propiedad: padding-left) */
+  margin-bottom: var(--espacio-s);    /* 16px debajo (propiedad: margin-bottom) */
+}
+
+.timeline__tasks li {
+  font-size: 0.9375rem;               /* 15px (propiedad: font-size) */
+  line-height: 1.4;                   /* altura de línea legible (propiedad: line-height) */
+  margin-bottom: var(--espacio-xxs);  /* 4px debajo de cada ítem (propiedad: margin-bottom) */
+  color: var(--color-texto);          /* gris oscuro */
+}
+
+/*=============================================================================
+  4) FOOTER: BOX-MODEL, PSEUDOCLASES Y UNIDADES RELATIVAS
+=============================================================================*/
+.footer {
+  background-color: #ffffff;          /* fondo blanco (propiedad: background-color) */
+  border-top: 1px solid #e0e0e0;      /* línea superior (propiedad: border-top) */
+  padding: var(--espacio-m) var(--espacio-s); /* 24px/16px (propiedad: padding) */
+}
+
+.footer__container {
+  max-width: 1200px;                  /* ancho máximo (propiedad: max-width) */
+  margin: 0 auto;                     /* centrado horizontal (propiedad: margin auto) */
+  text-align: center;                 /* centrado de texto (propiedad: text-align) */
+}
+
+.footer__text {
+  font-size: 0.875rem;                /* 14px (propiedad: font-size) */
+  color: var(--color-footer-texto);   /* gris claro (propiedad: color) */
+  margin: var(--espacio-xs) 0;        /* 8px arriba/abajo (propiedad: margin) */
+}
+
+.footer__link {
+  color: var(--color-primario);       /* azul (propiedad: color) */
+  text-decoration: none;              /* quita subrayado (propiedad: text-decoration) */
+  transition: text-decoration 0.2s;   /* transición suave (propiedad: transition) */
+}
+
+.footer__link:hover {
+  text-decoration: underline;         /* subraya al pasar cursor (propiedad: :hover) */
+}
+
+/*=============================================================================
+  5) MEDIA QUERIES (BREAKPOINTS)
+=============================================================================*/
+
+/* Móvil muy pequeño (<480px) */
+@media (max-width: 479px) {
+  .navbar__logo {
+    font-size: 1.25rem;               /* 20px para logo en móviles muy pequeños (propiedad: font-size) */
+  }
+  .navbar__logo-img {
+    width: 4rem;                      /* 64px para la imagen del logo (propiedad: width) */
+  }
+  .resume__container {
+    grid-template-columns: 1fr;       /* 1 columna siempre (propiedad: grid-template-columns) */
+  }
+  .timeline__yr {
+    flex: 0 0 100%;                   /* ocupa 100% para forzar salto de línea (propiedad: flex) */
+    text-align: left;                 /* alinea texto a la izquierda (propiedad: text-align) */
+    margin-bottom: var(--espacio-xs); /* 8px debajo (propiedad: margin-bottom) */
+  }
+}
+
+/* Tablet (>=480px y <768px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .resume__heading {
+    font-size: 1.5rem;                /* 24px en tablets (propiedad: font-size) */
+  }
+}
+
+/* Tablet horizontal y Desktop pequeño (>=768px y <1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .resume__container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas (propiedad: grid-template-columns) */
+  }
+}
+
+/* Desktop grande (>=1024px) */
+@media (min-width: 1024px) {
+  .resume__container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas (idéntico a tablet horizontal) */
+  }
+  .timeline__yr {
+    flex: 0 0 30%;                    /* 30% ancho en escritorio (propiedad: flex) */
+    text-align: right;                /* alinea a la derecha (propiedad: text-align) */
+  }
+  .timeline__info {
+    flex: 1;                          /* ocupa el espacio restante (propiedad: flex) */
+  }
+}
+
+/* Pantallas muy anchas (>=1440px) ajustes menores */
+@media (min-width: 1440px) {
+  .resume {
+    padding: var(--espacio-xl) var(--espacio-s); /* 48px /16px (propiedad: padding) */
+  }
+}

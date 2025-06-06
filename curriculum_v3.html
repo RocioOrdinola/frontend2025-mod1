@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Currículum – Rocío Ordinola</title>
+
+  <!-- =======================
+       1) TIPOGRAFÍA
+       ======================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Enlaza la hoja de estilos principal -->
+  <link rel="stylesheet" href="css/curriculum_v3.css">
+</head>
+<body>
+  <!-- =======================
+       BARRA DE NAVEGACIÓN 
+       ======================= -->
+  <nav class="navbar">
+    <div class="navbar__container">
+      <!-- Logo + Nombre: Flexbox para alinear imagen y texto -->
+      <a href="index_v3.html" class="navbar__logo">
+        <img
+          src="images/logo_condor.png"
+          alt="Logo de la marca"
+          class="navbar__logo-img"
+        >
+        <span class="navbar__logo-text">Rocío<br>Ordinola</span>
+      </a>
+
+      <!-- Menú principal: lista horizontal en escritorio, oculta en móvil -->
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="./index_v3.html" class="navbar__link">Inicio</a></li>
+        <li class="navbar__item"><a href="./servicios_v3.html" class="navbar__link">Servicios</a></li>
+        <li class="navbar__item"><a href="./proyectos_v3.html" class="navbar__link">Proyectos</a></li>
+        <li class="navbar__item"><a href="./curriculum_v3.html" class="navbar__link">Currículum</a></li>
+        <li class="navbar__item"><a href="./contacto_v3.html" class="navbar__link">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =======================
+       SECCIÓN CURRÍCULUM
+       ======================= -->
+  <main class="resume">
+    <div class="resume__container">
+      <!-- Experiencia Profesional y Educación lado a lado en escritorio, apilados en móvil -->
+      <section class="resume__column">
+        <h2 class="resume__heading">Experiencia Profesional</h2>
+        <div class="timeline">
+          <!-- 2023 – Actualidad -->
+          <div class="timeline__item">
+            <div class="timeline__yr">
+              <span>2023 – Actualidad</span>
+            </div>
+            <div class="timeline__info">
+              <h3 class="timeline__role">
+                Analista de datos y proyectos
+                <small class="timeline__org">Centro de Investigación y Formación Educativo Tecnológico</small>
+              </h3>
+              <ul class="timeline__tasks">
+                <li>Análisis de las necesidades empresariales y conversión en dashboards y KPIs.</li>
+                <li>Planificación y seguimiento de proyectos.</li>
+                <li>Creación y mejora de procedimientos para aumentar la eficiencia institucional.</li>
+                <li>Gestión de la comunicación entre gerencia y clientes.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2017 – Actualidad -->
+          <div class="timeline__item">
+            <div class="timeline__yr">
+              <span>2017 – Actualidad</span>
+            </div>
+            <div class="timeline__info">
+              <h3 class="timeline__role">
+                Especialista en Sistemas de Información Geográfica (SIG)
+                <small class="timeline__org">Provincia del Neuquén</small>
+              </h3>
+              <ul class="timeline__tasks">
+                <li>Análisis de datos espaciales para descubrir patrones y tendencias.</li>
+                <li>Creación de mapas y visualizaciones de datos espaciales.</li>
+                <li>Elaboración de informes técnicos.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2023 – Actualidad (Etika ®) -->
+          <div class="timeline__item">
+            <div class="timeline__yr">
+              <span>2023 – Actualidad</span>
+            </div>
+            <div class="timeline__info">
+              <h3 class="timeline__role">
+                Analista de datos y proyectos
+                <small class="timeline__org">Etika ®</small>
+              </h3>
+              <ul class="timeline__tasks">
+                <li>Monitoreo de métricas ambientales clave y generación de informes accionables.</li>
+                <li>Desarrollo de tableros interactivos y automatización de informes.</li>
+                <li>Comunicación con gerencia para implementar estrategias basadas en análisis clave.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume__column">
+        <h2 class="resume__heading">Educación</h2>
+        <div class="timeline">
+          <!-- 2024 – Diplomatura SIG UBA -->
+          <div class="timeline__item">
+            <div class="timeline__yr">
+              <span>2024</span>
+            </div>
+            <div class="timeline__info">
+              <h3 class="timeline__role">
+                Universidad de Buenos Aires
+                <small class="timeline__org">Diplomatura en SIG orientados a la visualización de problemáticas espaciales</small>
+              </h3>
+            </div>
+          </div>
+
+          <!-- 2023 – Diplomatura Datos Espaciales UBA -->
+          <div class="timeline__item">
+            <div class="timeline__yr">
+              <span>2023</span>
+            </div>
+            <div class="timeline__info">
+              <h3 class="timeline__role">
+                Universidad de Buenos Aires
+                <small class="timeline__org">Diplomatura en análisis exploratorio de datos espaciales aplicados a ciencias sociales</small>
+              </h3>
+            </div>
+          </div>
+
+          <!-- 2016 – Especialización SIG UBA -->
+          <div class="timeline__item">
+            <div class="timeline__yr">
+              <span>2016</span>
+            </div>
+            <div class="timeline__info">
+              <h3 class="timeline__role">
+                Universidad de Buenos Aires
+                <small class="timeline__org">Especialización en teledetección y SIG para recursos naturales y producción agropecuaria</small>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- =======================
+       PIE DE PÁGINA
+       ======================= -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__text">
+        &copy; 2025 Rocío Ordinola.
+      </p>
+      <p class="footer__text">
+        Conectemos en
+        <a
+          href="https://www.linkedin.com/in/1rocio-ordinola/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__link"
+        >
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
